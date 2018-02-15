@@ -20,4 +20,4 @@ For running this locally :
 
 ## License
 
-License: MIT Licens
+License: MIT License
