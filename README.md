@@ -6,12 +6,18 @@ A reddit search app leveraging the reddit search API to search its subreddits on
 We use React for creating the functionality and we build the project and have uploaded the built version to <br />
 [Live Version](https://redditsearch.surge.sh/)
 
-Thanks to [Surge](surge.sh) for the free hosting provision.
+Thanks to [Surge](https://surge.sh/) for the free hosting provision.
 
 ## Local Setup
+
 For running this locally :
+
 * Clone the repository
 * `cd <Project-Name>`
 * Run `npm i` or `yarn` based on your preference
 * To start the local server use :<br />
-    `npm run start` or `yarn start`
+  `npm run start` or `yarn start`
+
+## License
+
+License: MIT Licens
