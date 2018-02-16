@@ -27,8 +27,8 @@ export default class SearchCard extends React.Component {
 	/**
 	 * Search Method
 	 */
-	search = (searchTerm, searchLimit, sortBy) => {
-		return fetch(
+	search = async (searchTerm, searchLimit, sortBy) => {
+		const res = await fetch(
 			`https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`
 		)
 			.then(res => res.json())
@@ -36,6 +36,7 @@ export default class SearchCard extends React.Component {
 				return data.data.children.map(data => data.data)
 			})
 			.catch(err => console.error(err))
+		return res
 	}
 	/**
 	 * Error Message Display Function
