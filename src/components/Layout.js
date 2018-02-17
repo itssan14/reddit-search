@@ -1,5 +1,5 @@
-import Navbar from './Navbar'
-import React from 'react'
+import Navbar from './Navbar';
+import React from 'react';
 
 const Layout = props => {
 	return (
@@ -7,7 +7,7 @@ const Layout = props => {
 			<Navbar />
 			<div className="container">{props.children}</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Layout
+export default Layout;

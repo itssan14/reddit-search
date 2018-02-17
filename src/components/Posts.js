@@ -1,8 +1,8 @@
-import Post from './Post'
-import React from 'react'
+import Post from './Post';
+import React from 'react';
 
 const Posts = props => {
-	let results = props.post
+	let results = props.post;
 	let PostList = results.map((post, index) => {
 		return (
 			<Post
@@ -14,9 +14,9 @@ const Posts = props => {
 				score={post.score}
 				key={index}
 			/>
-		)
-	})
-	return <div className="card-columns">{PostList}</div>
-}
+		);
+	});
+	return <div className="card-columns">{PostList}</div>;
+};
 
-export default Posts
+export default Posts;

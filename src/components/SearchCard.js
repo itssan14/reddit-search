@@ -1,58 +1,57 @@
-import fetch from 'isomorphic-fetch'
-import React from 'react'
-import Posts from './Posts'
+import 'isomorphic-fetch';
+import React from 'react';
+import Posts from './Posts';
 
 export default class SearchCard extends React.Component {
 	state = {
 		post: [],
 		success: false
-	}
+	};
 	/**
 	 * Submit Handler
 	 */
 	formSubmit = e => {
-		e.preventDefault()
-		let searchkey = e.target.searchKey.value
-		let sortby = e.target.sortby.value
-		let limit = e.target.limit.value
+		e.preventDefault();
+		let searchkey = e.target.searchKey.value;
+		let sortby = e.target.sortby.value;
+		let limit = e.target.limit.value;
 		if (searchkey === '') {
-			this.showMessage('Please add a search term', 'alert-danger')
+			this.showMessage('Please add a search term', 'alert-danger');
 		} else {
-			let result = this.search(searchkey, limit, sortby)
+			let result = this.search(searchkey, limit, sortby);
 			result.then(results => {
-				this.setState({ post: results, success: true, limit: limit })
-			})
+				this.setState({ post: results, success: true, limit: limit });
+			});
 		}
-	}
+	};
 	/**
 	 * Search Method
 	 */
-	search = async (searchTerm, searchLimit, sortBy) => {
-		const res = await fetch(
+	search = (searchTerm, searchLimit, sortBy) => {
+		return fetch(
 			`https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`
 		)
 			.then(res => res.json())
 			.then(data => {
-				return data.data.children.map(data => data.data)
+				return data.data.children.map(data => data.data);
 			})
-			.catch(err => console.error(err))
-		return res
-	}
+			.catch(err => console.error(err));
+	};
 	/**
 	 * Error Message Display Function
 	 */
 	showMessage = (message, className) => {
-		const div = document.createElement('div')
-		div.className = `alert ${className}`
-		div.appendChild(document.createTextNode(message))
-		const searchContainer = document.querySelector('#search-container')
-		const search = document.querySelector('#search')
-		searchContainer.insertBefore(div, search)
+		const div = document.createElement('div');
+		div.className = `alert ${className}`;
+		div.appendChild(document.createTextNode(message));
+		const searchContainer = document.querySelector('#search-container');
+		const search = document.querySelector('#search');
+		searchContainer.insertBefore(div, search);
 		// Timeout after 5 sec
 		setTimeout(() => {
-			document.querySelector('.alert').remove()
-		}, 5000)
-	}
+			document.querySelector('.alert').remove();
+		}, 5000);
+	};
 	/**
 	 * Render Method
 	 */
@@ -116,6 +115,6 @@ export default class SearchCard extends React.Component {
 					<div id="results" />
 				)}
 			</div>
-		)
+		);
 	}
 }

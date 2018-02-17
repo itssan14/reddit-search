@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Post = props => (
 	<div className="card mb-2">
@@ -16,12 +16,12 @@ const Post = props => (
 			<span className="badge badge-dark">Score: {props.score}</span>
 		</div>
 	</div>
-)
+);
 
-export default Post
+export default Post;
 
 function truncateString(myString, limit) {
-	const shortened = myString.indexOf(' ', limit)
-	if (shortened === -1) return myString
-	return myString.substring(0, shortened)
+	const shortened = myString.indexOf(' ', limit);
+	if (shortened === -1) return myString;
+	return myString.substring(0, shortened);
 }
