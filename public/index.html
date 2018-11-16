@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta
+      name="Description"
+      content="A simple search engine for searching reddit posts."
+    />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <title>Reddit Search</title>
+    <style>
+      input::-webkit-input-placeholder {
+        color: black !important;
+      }
 
-<head>
-  <meta name="Description" content="A simple search engine for searching reddit posts.">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="theme-color" content="#000000">
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-  <title>Reddit Search</title>
-</head>
+      input:-moz-placeholder {
+        color: black !important;
+      }
 
-<body style="background-color: #37474f;">
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
-  <div id="root"></div>
-</body>
+      input::-moz-placeholder {
+        color: black !important;
+      }
 
+      input:-ms-input-placeholder {
+        color: black !important;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: #37474f;">
+    <noscript> You need to enable JavaScript to run this app. </noscript>
+    <div id="root"></div>
+  </body>
 </html>
