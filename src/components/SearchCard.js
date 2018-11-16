@@ -78,20 +78,20 @@ export default class SearchCard extends React.Component {
 								type="radio"
 								name="sortby"
 								value="relevance"
+								aria-label="relevance"
 								defaultChecked
 							/>
 							<label className="form-check-label">Relevance</label>
-						</div>
-						<div className="form-check form-check-inline">
 							<input
 								className="form-check-input ml-2"
 								type="radio"
 								name="sortby"
 								value="new"
+								aria-label="latest"
 							/>
 							<label className="form-check-label">Latest</label>
 						</div>
-						<h5 className="mt-2">Limit: </h5>
+						<h5 className="mt-2"><label for="limit">Limit</label>:</h5>
 						<div className="form-group">
 							<select name="limit" id="limit" className="form-control">
 								<option value="5">5</option>
@@ -104,7 +104,7 @@ export default class SearchCard extends React.Component {
 							</select>
 						</div>
 						<button type="submit" className="btn btn-dark btn-block mt-4">
-							Search
+							<b>SEARCH</b>
 						</button>
 					</form>
 				</div>
