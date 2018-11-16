@@ -68,6 +68,7 @@ export default class SearchCard extends React.Component {
 								name="searchKey"
 								className="form-control mb-3"
 								placeholder="Search Term..."
+								aria-label="Search Term"
 							/>
 						</div>
 						<div className="form-check form-check-inline">
@@ -83,7 +84,7 @@ export default class SearchCard extends React.Component {
 						</div>
 						<div className="form-check form-check-inline">
 							<input
-								className="form-check-input"
+								className="form-check-input ml-2"
 								type="radio"
 								name="sortby"
 								value="new"
