@@ -15,12 +15,13 @@ export default class SearchCard extends React.Component {
 		let searchkey = e.target.searchKey.value;
 		let sortby = e.target.sortby.value;
 		let limit = e.target.limit.value;
+		let paginationLimit = Number(e.target.paginationLimit.value);
 		if (searchkey === '') {
 			this.showMessage('Please add a search term', 'alert-danger');
 		} else {
 			let result = this.search(searchkey, limit, sortby);
 			result.then(results => {
-				this.setState({ post: results, success: true, limit: limit });
+				this.setState({ post: results, success: true, limit: limit, paginationLimit });
 			});
 		}
 	};
@@ -91,9 +92,22 @@ export default class SearchCard extends React.Component {
 							/>
 							<label className="form-check-label">Latest</label>
 						</div>
-						<h5 className="mt-2"><label for="limit">Limit</label>:</h5>
+						<h5 className="mt-2"><label htmlFor="limit">Limit</label>:</h5>
 						<div className="form-group">
 							<select name="limit" id="limit" className="form-control">
+								<option value="5">5</option>
+								<option value="10">10</option>
+								<option value="25" defaultValue>
+									25
+								</option>
+								<option value="50">50</option>
+								<option value="100">100</option>
+							</select>
+						</div>
+						<h5 style={{ display: 'inline-block' }} className="mt-2"><label htmlFor="paginationLimit">Pagination Limit</label>:</h5>
+						
+						<div className="form-group">
+							<select name="paginationLimit" id="paginationLimit" className="form-control">
 								<option value="5">5</option>
 								<option value="10">10</option>
 								<option value="25" defaultValue>
@@ -110,7 +124,7 @@ export default class SearchCard extends React.Component {
 				</div>
 				{this.state.success ? (
 					<div id="results">
-						<Posts post={this.state.post} />
+						<Posts post={this.state.post} paginationLimit={this.state.paginationLimit}/>
 					</div>
 				) : (
 					<div id="results" />
